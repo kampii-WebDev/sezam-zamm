@@ -1,0 +1,29 @@
+@import 'colors';
+
+footer {
+	display: block;
+	position: static;
+	bottom: 0;
+	width: 100%;
+	padding: 6px 0;
+	background-color: #e4d9c2;
+	font-size: 12px;
+	color: $mainc-product;
+	text-align: center;
+}
+
+footer::before {
+	content: $actual-year;
+}
+
+@media (min-width: 769px) {
+	footer {
+		position: fixed;
+	}
+}
+
+@media (min-height: 732px) {
+	footer {
+		position: fixed;
+	}
+}

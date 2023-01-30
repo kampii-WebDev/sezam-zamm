@@ -1,0 +1,238 @@
+@import 'colors';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: $bgc;
+	font-family: 'Montserrat', sans-serif;
+	color: $mainc;
+}
+
+.df {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#product {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 15px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.left-column {
+	width: 40%;
+
+	img {
+		max-height: 80vh;
+		object-fit: contain;
+	}
+}
+
+.right-column {
+	width: 60%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-left: 30px;
+}
+
+.left-column img {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.product-description {
+	margin-bottom: 40px;
+}
+
+.product-description h1 {
+	font-weight: 300;
+	font-size: 44px;
+	letter-spacing: -2px;
+}
+
+.product-description h4 {
+	margin-top: 20px;
+	font-weight: 200;
+	font-size: 20px;
+	letter-spacing: 1px;
+	color: $heading-product;
+}
+
+.product-description h3 {
+	margin-top: 20px;
+	font-weight: 200;
+	font-size: 20px;
+	letter-spacing: 1px;
+	color: $heading-product;
+}
+
+.product-description h3 span {
+	color: $mainc-product;
+	font-weight: bold;
+}
+
+.product-description p {
+	margin-top: 20px;
+	font-size: 16px;
+	font-weight: 300;
+	color: $lightgray-product;
+}
+
+.product-preview .previewImg {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+	margin-top: 20px;
+}
+
+.product-preview .previewImg img {
+	margin: 5px;
+	width: 90px;
+	height: 140px;
+	object-fit: cover;
+	cursor: pointer;
+	padding: 4px;
+	border-radius: 12px;
+	border: 2px solid $mainc-product;
+}
+
+.previewImg img:hover {
+	transform: scale(95%);
+}
+
+.buttons {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	flex-wrap: wrap;
+}
+
+.delivery-pop-up {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: -100px;
+	left: 31px;
+	width: 200px;
+	height: 110px;
+	background-color: $mainc-product;
+	font-size: 14px;
+	letter-spacing: normal;
+	font-weight: normal;
+	color: $white;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	cursor: auto;
+	opacity: 0;
+	transition: opacity 0.4s;
+
+	.m-b {
+		margin-bottom: 2px;
+	}
+
+	.dvp-one::before {
+		content: $delivery-price1;
+	}
+
+	.dvp-two::before {
+		content: $delivery-price2;
+	}
+}
+
+#close {
+	position: absolute;
+	left: 180px;
+	top: -100px;
+	width: 50px;
+	height: 50px;
+	border-top-right-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	opacity: 0;
+	z-index: 15;
+	transition: opacity 0.4s;
+}
+
+.btn {
+	display: block;
+	margin: 6px 6px;
+	padding: 10px 20px;
+	background-color: $mainc-product;
+	font-size: 16px;
+	letter-spacing: 2px;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	color: $white;
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	transition: box-shadow 0.3s;
+
+	i.fa-whatsapp {
+		font-size: 18px;
+	}
+}
+
+.btn:hover {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.collection {
+	justify-content: start;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 8px 0 10px 0;
+
+	span {
+		margin-left: 10px;
+		transform: translate(0, 25%);
+		font-size: 15px;
+		letter-spacing: 1px;
+		cursor: default;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#product {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.left-column {
+		width: 100%;
+	}
+	.right-column {
+		width: 100%;
+		padding-left: 30px;
+	}
+	.product-description h1 {
+		font-size: 34px;
+	}
+	.product-description h4 {
+		font-size: 14px;
+	}
+	.product-description h3 {
+		font-size: 17px;
+	}
+	.product-description p {
+		font-size: 14px;
+	}
+}
